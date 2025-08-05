@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor - Patient Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='doc.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Search Patients by Illness</h1>
+
+        <form method="post" action="{{ url_for('search_patients') }}">
+            <label for="illness">Select Illness:</label>
+            <select name="illness" id="illness" required>
+                <option value="" disabled selected>Choose an illness</option>
+                <option value="fever">Fever</option>
+                <option value="cold">Cold</option>
+                <option value="cough">Cough</option>
+                <option value="headache">Headache</option>
+                <option value="other">Other</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+
+        {% if patients %}
+            <h2> Patients Found:</h2>
+            <ul>
+                {% for p in patients %}
+                    <li>
+                        <strong>{{ p[1] }}</strong> (ID: {{ p[0] }})<br>
+                        Illness: {{ p[2] }}<br>
+                        Phone: {{ p[3] }}<br>
+                        Email: {{ p[4] }}<br>
+                        Address: {{ p[5] }}<br>
+                        Date: {{ p[6] }} | Time: {{ p[7] }}
+                    </li>
+                    <hr>
+                {% endfor %}
+            </ul>
+        {% elif patients is not none %}
+            <p>No patients found with that illness.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

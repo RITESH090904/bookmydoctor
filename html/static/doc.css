@@ -1,0 +1,104 @@
+/* static/docstyle.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  color: #117a8b;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+form {
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+select {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  transition: border-color 0.25s ease-in-out;
+}
+
+select:focus {
+  border-color: #117a8b;
+  outline: none;
+}
+
+button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  background-color: #117a8b;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0f5c66;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #34495e;
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #e3f2f3;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+  color: #2c3e50;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #d0d7de;
+  margin: 14px 0;
+  opacity: 0.6;
+}
+
+p {
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+  font-size: 16px;
+}
