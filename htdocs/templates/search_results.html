@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Patients for "{{ illness }}"</h2>
+
+    {% if patients %}
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th><th>Name</th><th>Illness</th><th>Phone</th><th>Email</th><th>Address</th><th>Date</th><th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in patients %}
+            <tr>
+                <td>{{ p['id'] }}</td>
+                <td>{{ p['name'] }}</td>
+                <td>{{ p['illness'] }}</td>
+                <td>{{ p['phone'] }}</td>
+                <td>{{ p['email'] }}</td>
+                <td>{{ p['address'] }}</td>
+                <td>{{ p['appointment_date'] }}</td>
+                <td>{{ p['appointment_time'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No patients found for "{{ illness }}"</p>
+    {% endif %}
+
+    <br><a href="{{ url_for('search_form') }}">← Back to Search</a>
+</body>
+</html>

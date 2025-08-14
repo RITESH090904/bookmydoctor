@@ -1,0 +1,197 @@
+h1 {
+
+    text-align: center;
+    color: black;
+    cursor: pointer;
+    animation: 3s ease-in 1s infinite reverse both running slide-in;
+}
+
+h1:hover {
+    color: rgb(55, 85, 222);
+    text-decoration: underline;
+    text-decoration-color: rgb(55, 85, 222);
+    transition-property: all;
+}
+
+.doc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position:  fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0%;
+    border: 0;
+}
+
+.doc1 {
+    margin: 20px;
+    border-radius: 10px;
+    width: 250px;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.doc1 img {
+
+    transition: transform 0.6s ease;
+}
+
+.doc1:hover img {
+    transform: scale(1.1);
+}
+
+.doc2 {
+    margin: 20px;
+    border-radius: 10px;
+     width: 250px;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.doc2 img {
+
+    transition: transform 0.6s ease;
+}
+
+.doc2:hover img {
+    transform: scale(1.1);
+}
+
+
+.doc3 {
+    margin: 20px;
+    border-radius: 10px;
+     width: 250px;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.doc3 img {
+
+    transition: transform 0.6s ease;
+}
+
+.doc3:hover img {
+    transform: scale(1.1);
+}
+
+.login {
+
+    display: flex;
+    color: rgb(55, 85, 222);
+    height: auto;
+    width: auto;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    justify-content: right;
+
+}
+
+.login:hover {
+    background-color: rgb(234, 178, 178);
+    color: cyan;
+}
+
+
+
+
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    cursor: pointer;
+}
+
+.navbar-left img {
+    height: 100px;
+}
+
+.search {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 60%;
+    max-width: 800px;
+    overflow: hidden;
+}
+
+.location,
+.search-input {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.location {
+    border-right: 1px solid #ccc;
+    max-width: 200px;
+    background-color: #f9f9f9;
+}
+
+.location i,
+.search-input i {
+    margin-right: 10px;
+}
+
+.search-input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.btn-login {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background-color: cyan;
+}

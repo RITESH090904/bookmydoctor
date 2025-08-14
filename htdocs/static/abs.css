@@ -1,0 +1,206 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #c8d7dc;
+    color: #222;
+    transition: filter 0.3s ease, background-color 0.3s ease;
+}
+
+/* Background blur effect class */
+body.blurred {
+    filter: blur(3px) brightness(0.7);
+}
+
+/* Header */
+header {
+    background: #2a4d69;
+    color: #fff;
+    padding: 24px 0 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+h1.slide-in {
+    font-size: 2.5rem;
+    animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #375a7f;
+    padding: 10px 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.navbar-left img {
+    height: 48px;
+    border-radius: 10px;
+}
+
+.navbar-right {
+    display: flex;
+    gap: 20px;
+}
+.navbar-right welcome{
+    align-items: center;
+}
+
+.navbar-right a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.navbar-right a:hover {
+    background-color: #22334a;
+}
+
+/* Search bar */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 30px 0;
+}
+
+.search-bar .location,
+.search-bar .search-input {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 16px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    margin-left: 8px;
+    font-size: 1rem;
+    background: transparent;
+}
+
+/* Doctor image cards */
+.doc {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 32px;
+    transition: filter 0.3s ease;
+}
+
+.doc .image-container {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.doc .image-container img {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect: scale image and blur background */
+.doc .image-container:hover img {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+/* Blur body on image hover via JavaScript */
+.doc .image-container:hover ~ body {
+    filter: blur(4px);
+}
+.search-bar button{
+    border: 10px;
+    padding: 20px;
+    font-size: 16px;
+    border: none;
+    background-color: whitesmoke;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+.search-bar form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+}
+.search-bar select{
+    border: 0px;
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    cursor: pointer;
+
+
+}
+.navbar {
+    align-items: center;
+}
+.search-bar button[type="submit"]:hover{
+    background-color: #2a4d69;
+    color: whitesmoke;
+}
+/* Footer */
+footer {
+    background: #2a4d69;
+    color: #fff;
+    text-align: center;
+    padding: 24px 0 16px;
+}
+
+footer a img {
+    vertical-align: middle;
+    margin: 0 8px;
+    border-radius: 25%;
+    transition: box-shadow 0.2s;
+}
+
+footer a img:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .doc {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+
+
