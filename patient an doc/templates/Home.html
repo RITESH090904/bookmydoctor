@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AB Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='abs.css') }}">
+</head>
+
+<body class="style" style="background-color: rgb(200, 215, 220)">
+
+
+    
+
+    <header>
+    </header>
+
+    <div class="navbar">
+        <div class="navbar-left">
+            <img src="{{ url_for('static', filename='photoes/ab.avif') }}" alt="AB logo" />
+        </div>
+        <div class="navbar-right">
+            {% if username %}
+            <div class="welcome"><h1>Welcome, {{ username }}!</h1></div>
+            <div><a href="{{ url_for('logout') }}">Logout</a></div>
+            {% else %}
+            <div><a href="{{ url_for('login') }}" class="patient-link">Login</a></div>
+            {% endif %}
+            <div><a href="{{ url_for('dashboard') }}" class="patient-link">for patients</a></div>
+            <div><a href="#">for labs</a></div>
+            <div><a href="#">Security & help</a></div>
+    </div>
+
+    </div>
+
+    <div class="search-bar">
+        <form action="{{ url_for('dashboard')}}" method="get">
+            <div class="location">
+                <i>📍</i>
+                    <select name="location" id="location">
+                        <option value="" disabled selected>Select an location</option>
+                        <option value="wakad">wakad</option>
+                        <option value="hijewadi">hinjewadi</option>
+                        <option value="baner">baner</option>
+                        <option value="pimpri">pimpri</option>
+                        <option value="chincwad">chincwad</option>
+                    </select>
+            </div>
+            <br>
+            <div class="search-input">
+                <i>🔍</i>
+                    <select name="doctor_name" id="doctor_name">
+                        <option value="" disabled selected>Select Doctor</option>
+                        <option value="Dr.viraj">Dr. Viraj</option>
+                        <option value="Dr.ritesh">Dr. Ritesh</option>
+                    </select>
+            </div>
+            <br>
+            <button type="submit">SEARCH</button>
+        </form>               
+    </div>
+
+
+
+    <hr />
+
+    <div class="doc">
+        <div class="doc1 image-container">
+            <a href="https://www.youtube.com">
+                <img src="{{ url_for('static', filename='photoes/doctor.png') }}" alt="Doctor" width="300" height="200" />
+            </a>
+        </div>
+        <div class="doc2 image-container">
+            <a href="https://www.google.com">
+                <img src="{{ url_for('static', filename='photoes/doctor2.png') }}" alt="Doctor" width="300" height="200" />
+            </a>
+        </div>
+        <div class="doc3 image-container">
+            <a href="https://www.flipkart.com">
+                <img src="{{ url_for('static', filename='photoes/doctor3.png') }}" alt="Doctor" width="300" height="200" />
+            </a>
+        </div>
+    </div>
+     <div class="emergency" id="emergency">
+        <a href="emergency.html">
+            <button class="emergency-button">Emergency</button>
+        </a>
+    </div>
+
+    <hr />
+
+    <footer>
+        <p>© 2023 AB. All rights reserved.</p>
+        <p>Contact us: 9876543210 | Email: ab@gmail.com</p>
+        <p>Address: Pune, Maharashtra</p>
+        <p>Follow us on social media:</p>
+        <p>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="{{ url_for('static', filename='photoes/facebook.png') }}" alt="Facebook" width="20" height="20" style="border-radius: 25%" />
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+                <img src="{{ url_for('static', filename='photoes/twitter.png') }}" alt="Twitter" width="20" height="20" style="border-radius: 25%" />
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="{{ url_for('static', filename='photoes/instagram.jpeg') }}" alt="Instagram" width="20" height="20" style="border-radius: 25%" />
+            </a>
+        </p>
+    </footer>
+</body>
+
+</html>

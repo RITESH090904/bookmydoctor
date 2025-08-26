@@ -1,0 +1,184 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #c8d7dc;
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+
+header {
+    background: #2a4d69;
+    color: #fff;
+    padding: 24px 0 12px 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+h1.slide-in {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #375a7f;
+    padding: 10px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.navbar-left img {
+    height: 48px;
+    border-radius: 10px;
+}
+
+.navbar-right {
+    display: flex;
+    gap: 24px;
+}
+
+.navbar-right div a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.navbar-right div a:hover {
+    background: #22334a;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 32px 0 24px 0;
+}
+
+.search-bar .location,
+.search-bar .search-input {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    margin-left: 8px;
+    font-size: 1rem;
+    background: transparent;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #b0bfc7;
+    margin: 32px 0;
+}
+
+.doc {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 32px;
+}
+
+.doc > div {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 12px;
+}
+
+.doc > div:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.doc img {
+    border-radius: 8px;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+footer {
+    background: #2a4d69;
+    color: #fff;
+    text-align: center;
+    padding: 24px 0 16px 0;
+    font-size: 1rem;
+}
+
+footer a img {
+    vertical-align: middle;
+    margin: 0 8px;
+    border-radius: 25%;
+    transition: box-shadow 0.2s;
+}
+
+footer a img:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+@media (max-width: 900px) {
+    .doc {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px 10px;
+    }
+    .search-bar {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+/* Illness dropdown styling */
+label[for="Illness"] {
+    font-weight: 500;
+    margin-right: 12px;
+    color: #2a4d69;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+body:has(img:hover) {
+    filter: blur(2px);
+}
+.emergency {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.emergency-button {
+    background-color: aqua;
+    color: rgb(180, 30, 30);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.emergency-button:hover {
+    background-color: rgb(94, 94, 233);
+    transform: scale(1.05);
+}   

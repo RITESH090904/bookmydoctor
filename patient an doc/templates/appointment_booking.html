@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book an Appointment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='appstyle.css') }}" />
+    <link rel="stylesheet" href="appstyle.css" />
+    <style>
+        /* Success message styling */
+        .flash-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 15px auto;
+            width: 90%;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            animation: fadeOut 1s ease-in forwards;
+            animation-delay: 3s;
+        }
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ✅ Show flashed messages from Flask -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="flash-message">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <div class="container">
+        <h1>Book Your Appointment</h1>
+        <form action="{{ url_for('submit_appointment') }}" method="post" autocomplete="on">
+            <!-- Patient Name -->
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" value="{{username}}" placeholder="Enter your full name" required />
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g. 9876543210" pattern="[0-9]{10}" required />
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email location:</label>
+                <input type="email" id="email" name="email" placeholder="your@gmail.com" />
+            </div>
+
+            <!-- Doctor_name -->
+            <div class="form-group">
+                <label for="doctor_name">Doctor Name:</label>
+                <select name="doctor_name" id="doctor_name" required>
+                    <option value="" disabled {% if not doctor_name %} selected {% endif %}>Select Doctors</option>
+                    <option value="Dr.viraj" {% if doctor_name|lower == "dr.viraj"|lower %} selected {% endif %}>Dr. Viraj</option>
+                    <option value="Dr.ritesh" {% if doctor_name|lower == "dr.ritesh"|lower %} selected {% endif %}>Dr. Ritesh</option>
+                </select>
+            </div>
+
+            <!-- location -->
+            <div class="form-group">
+                <label for="location">Preferred location:</label>
+                <select type="text" id="location" name="location">
+                    <option value="" disabled {% if not location %} selected {% endif %}>location</option>
+                    <option value="wakad"{% if location|lower == "wakad"|lower %} selected {% endif %}>wakad</option>
+                    <option value="hijewadi"{% if location|lower == "hijewadi"|lower %} selected {% endif %}>hinjewadi</option>
+                    <option value="baner"{% if location|lower == "baner"|lower %} selected {% endif %}>baner</option>
+                    <option value="pimpri"{% if location|lower == "pimpri"|lower %} selected {% endif %}>pimpri</option>
+                    <option value="chincwad"{% if location|lower == "chincwad"|lower %} selected {% endif %}>chincwad</option>
+                </select>
+            </div>
+
+            <!-- Illness -->
+            <div class="form-group">
+                <label for="illness">Health Issue:</label>
+                <select id="illness" name="illness">
+                    <option value="" disabled selected>Select an issue</option>
+                    <option value="fever">Fever</option>
+                    <option value="cold">Cold</option>
+                    <option value="cough">Cough</option>
+                    <option value="headache">Headache</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <!-- Appointment Date -->
+            <div class="form-group">
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required />
+            </div>
+
+            <!-- Appointment Time -->
+            <div class="form-group">
+                <label for="time">Preferred Time:</label>
+                <input type="time" id="time" name="time" required />
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit">Book Appointment</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

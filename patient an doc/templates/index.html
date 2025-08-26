@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            background-color: #d3d3d3; 
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        a.button-link, button {
+            display: inline-block;
+            background-color: #8a89c0;
+            color: white;
+            border: 1px solid black;
+            padding: 15px 30px;
+            margin: 10px 0;
+            cursor: pointer;
+            width: 300px;
+            font-size: 16px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        img {
+            margin-bottom: 20px;
+            max-width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Load image from static folder -->
+        <img src="{{ url_for('static', filename='your-image.png') }}" alt="AB">
+        <br>
+
+        <!-- Patient login -->
+        <a href="{{ url_for('login') }}" class="button-link">Login as Patient</a>
+        <br>
+        
+        <!-- Doctor login -->
+        <a href="{{ url_for('doctor_login') }}" class="button-link">Login as Doctor</a>
+    </div>
+</body>
+</html>

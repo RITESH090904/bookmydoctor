@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Search Patients</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Search Patients by Illness</h2>
+    <form action="{{ url_for('show_results') }}" method="get">
+        <label for="illness">Enter Illness:</label>
+        <input type="text" name="illness" id="illness" required>
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>
